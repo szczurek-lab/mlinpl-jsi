@@ -1,0 +1,7 @@
+{
+    "data_path": "/home/aih/serra.korkmaz/projects/joint-improvement/data/amp/pretrain/stage2/dataset_train_stage2.npz",
+    "sequence_key": "sequences",
+    "target_key": "properties",
+    "transforms": null,
+    "target_transforms": null
+}

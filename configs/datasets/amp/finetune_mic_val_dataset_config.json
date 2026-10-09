@@ -1,0 +1,13 @@
+{
+    "data_path": "/home/aih/serra.korkmaz/projects/joint-improvement/data/amp/finetune/mic/seed_0/val.npz",
+    "sequence_key": "sequence",
+    "target_key": "target",
+    "transforms": null,
+    "target_transforms": [
+        {
+            "type": "zscore",
+            "mean": 1.1276198015815955,
+            "std": 0.7739576701550223
+        }
+    ]
+}

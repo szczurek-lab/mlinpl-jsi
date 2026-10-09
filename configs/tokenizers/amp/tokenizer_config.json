@@ -1,0 +1,15 @@
+{
+  "vocab_filepath": "/home/aih/serra.korkmaz/projects/joint-improvement/data/vocabularies/aa.txt",
+  "bos_token": "<s>",
+  "eos_token": "</s>",
+  "pad_token": "<pad>",
+  "unk_token": "<unk>",
+  "mask_token": "<mask>",
+  "task_tokens": {
+    "lm": "<lm>",
+    "mlm": "<mlm>",
+    "prediction": "<cls>"
+  },
+  "additional_special_tokens": null,
+  "regex_pattern": "([ACDEFGHIKLMNPQRSTVWYX]|[BZO]|U|\\-|\\.)"
+}

@@ -1,0 +1,23 @@
+{
+  "batch_size": 512,
+  "learning_rate": 6e-4,
+  "weight_decay": 0.1,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "max_epochs": 20,
+  "grad_clip": 1.0,
+  "warmup_ratio": 0.05,
+  "min_lr": 1e-6,
+  "decay_lr": true,
+  "dtype": "bfloat16",
+  "log_every_n_iterations": 100,
+  "checkpoint_every_n_epochs": 5,
+  "patience": null,
+  "compile": true,
+  "allow_tf32": true,
+  "tasks": {
+    "lm": 0.9,
+    "mlm": 0.1
+  }
+}
+

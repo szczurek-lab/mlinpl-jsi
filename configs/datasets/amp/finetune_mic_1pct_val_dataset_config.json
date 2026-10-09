@@ -1,0 +1,13 @@
+{
+    "data_path": "/ictstr01/home/aih/serra.korkmaz/projects/joint-improvement/data/amp/finetune/mic_no_1percent_positive/val.npz",
+    "sequence_key": "sequence",
+    "target_key": "target",
+    "transforms": null,
+    "target_transforms": [
+        {
+            "type": "zscore",
+            "mean": 1.9856197834014893,
+            "std": 0.401226282119751
+        }
+    ]
+}

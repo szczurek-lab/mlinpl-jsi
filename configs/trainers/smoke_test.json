@@ -1,0 +1,19 @@
+{
+  "learning_rate": 3e-4,
+  "weight_decay": 0.1,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "max_epochs": 10,
+  "grad_clip": 1.0,
+  "warmup_ratio": 0.1,
+  "min_lr": 1e-5,
+  "decay_lr": true,
+  "dtype": "float32",
+  "log_every_n_iterations": 100,
+  "patience": 2,
+  "compile": true,
+  "tasks": {
+    "lm": 1.0
+  }
+}
+

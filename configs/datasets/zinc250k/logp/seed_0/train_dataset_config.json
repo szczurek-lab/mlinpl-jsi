@@ -1,0 +1,13 @@
+{
+    "data_path": "data/processed/zinc250k/logp/seed_0/train.npz",
+    "sequence_key": "sequence",
+    "target_key": "labels",
+    "transforms": null,
+    "target_transforms": [
+        {
+            "type": "zscore",
+            "mean": 2.1068269368733743,
+            "std": 1.3539441655820603
+        }
+    ]
+}

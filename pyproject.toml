@@ -1,0 +1,122 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "joint-improvement"
+version = "0.0.1"
+description = "Official repository for Joint Self-Improvement paper."
+authors = [
+  {name = "Serra Korkmaz", email = "serra.korkmaz@helmholtz-munich.de"},
+  {name = "Adam Izdebski", email = "adam.izdebski@helmholtz-munich.de"},
+]
+readme = "README.md"
+license = {text = "BSD-3-Clause"}
+requires-python = ">=3.11"
+# Note: C compiler (gcc/clang) required for torch.compile support.
+# Install via: Ubuntu/Debian: sudo apt-get install build-essential
+dependencies = [
+  "torch>=2.9.0",
+  "transformers>=4.49.0",
+  "tqdm",
+  "numpy",
+  "pandas",
+  "loguru",
+  "scikit-learn",
+  "rdkit",
+]
+
+[project.optional-dependencies]
+dev = [
+    "nbstripout",
+    "pre-commit>=3.0.0",
+    "ruff"
+]
+notebook = [
+    "ipykernel",
+    "matplotlib",
+]
+chemprop = [
+    "chemprop",
+]
+# Docking is Linux-only (the bundled QuickVina2 binary is Linux x86-64).
+docking-cpu = [
+    "openbabel-wheel",
+]
+# Also needs a manually built QuickVina2-GPU binary, see README.
+docking-gpu = [
+    "openbabel-wheel",
+]
+# Placeholder for peptide-specific dependencies.
+peptides = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [
+    "**/incremental_sbs.py",
+    "**/stochastic_beam_search.py",
+    "**/utils/chemistry/docking_utils/**",
+    "**/utils/chemistry/synthesizability_utils/**",
+    "**/generators/utils/**",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "F",      # Errors detected by Pyflakes
+    "E",      # Errors detected by Pycodestyle
+    "W",      # Warnings detected by Pycodestyle
+    "I",      # isort (import sorting)
+    "D",      # pydocstyle (docstring conventions)
+    "B",      # flake8-bugbear (common bugs and design issues)
+    "TID",    # flake8-tidy-imports (import restrictions)
+    "C4",     # flake8-comprehensions (list/set/dict comprehension improvements)
+    "BLE",    # flake8-blind-except (discourage bare except)
+    "UP",     # pyupgrade (syntax upgrades for newer Python versions)
+    "TCH",    # typing imports (prefer standard library typing)
+]
+
+ignore = [
+    # Pycodestyle
+    "E731", # Do not assign a lambda expression (we allow this for convenience)
+
+    # Flake8-bugbear
+    "B008", # Do not perform function calls in default arguments (allowed when result is immutable)
+
+    # Flake8-blind-except
+    "BLE001", # Do not catch bare `except` (allowed for optional dependency handling)
+
+    # Pydocstyle — disable "missing docstring" checks (docstrings optional)
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D106", # Missing docstring in public nested class
+    "D107", # Missing docstring in __init__
+
+    # Pydocstyle — stylistic rules we don't want
+    "D400", # First line should end with a period
+    "D401", # First line should be in imperative mood
+    "D203", # 1 blank line required before class docstring
+    "D212", # Enforces first-line docstring — disabled, since we prefer second-line
+
+
+    # Flake8-tidy-imports — ignore type-checking import restrictions
+    "TC001", # First-party imports should be in a TYPE_CHECKING block
+    "TC002", # Third-party imports should be in a TYPE_CHECKING block
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["docs", "docs/**"]
+
+[tool.hatch.build.targets.wheel]
+exclude = ["docs", "docs/**"]
+

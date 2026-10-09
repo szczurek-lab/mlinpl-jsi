@@ -1,0 +1,17 @@
+{
+  "vocab_filepath": "data/vocabularies/zinc250k.txt",
+  "bos_token": "<bos>",
+  "eos_token": "<eos>",
+  "pad_token": "<pad>",
+  "unk_token": null,
+  "mask_token": "<mask>",
+  "task_tokens": {
+    "lm": "<lm>",
+    "mlm": "<mlm>",
+    "physchem": "<physchem>",
+    "prediction": "<prediction>",
+    "rl": "<rl>"
+  },
+  "additional_special_tokens": []
+}
+

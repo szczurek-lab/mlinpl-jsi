@@ -1,0 +1,7 @@
+{
+    "data_path": "data/zinc250k/docking/5ht1b/seed_7/test.npz",
+    "sequence_key": "sequence",
+    "target_key": "target",
+    "transforms": null,
+    "target_transforms": null
+}

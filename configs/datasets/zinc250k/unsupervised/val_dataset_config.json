@@ -1,0 +1,7 @@
+{
+    "data_path": "data/zinc250k/unsupervised/val.npz",
+    "sequence_key": "sequence",
+    "target_key": null,
+    "transforms": null,
+    "target_transforms": null
+}

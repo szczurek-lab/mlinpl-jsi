@@ -1,0 +1,13 @@
+{
+    "data_path": "/ictstr01/home/aih/serra.korkmaz/projects/joint-improvement/experiments/amp/bootstrap_inputs_0pcpos/train.npz",
+    "sequence_key": "sequence",
+    "target_key": "target",
+    "transforms": null,
+    "target_transforms": [
+        {
+            "type": "zscore",
+            "mean": 1.9992990493774414,
+            "std": 0.38627877831459045
+        }
+    ]
+}
