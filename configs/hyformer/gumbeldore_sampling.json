@@ -1,0 +1,15 @@
+{
+  "vocab_size": 71,
+  "d_model": 256,
+  "n_heads": 8,
+  "n_layers": 8,
+  "max_seq_len": 128,
+  "attn_dropout_p": 0.0,
+  "predictor_dropout_p": 0.0,
+  "predictor_head_depth": 1,
+  "predictor_head_act_fn": "gelu",
+  "rms_norm_eps": 1e-5,
+  "num_prediction_tasks": 1,
+  "prediction_task_type": "regression",
+  "generator_type": "gumbeldore"
+}
